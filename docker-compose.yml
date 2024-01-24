@@ -3,15 +3,15 @@ services:
   pacs:
     image: jodogne/orthanc-plugins
     ports:
-      - 8042:8042
+      - 8043:8042
     volumes:
       - ./orthanc.json:/etc/orthanc/orthanc.json:ro
       - orthanc_db:/var/lib/orthanc/db/
 
   ohif_viewer:
-    image: ohif-viewer-image
+    image: anilyerramasu\ohif-viewer-image
     ports:
-      - 3000:80
+      - 3001:80
     environment: 
       - APP_CONFIG:/usr/share/nginx/html/app-config.js
     volumes:
